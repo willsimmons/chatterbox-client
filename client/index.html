@@ -1,20 +1,68 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>chatterbox</title>
-    <link rel="stylesheet" href="styles/styles.css">
+<head>
+  <meta charset="utf-8">
+  <title>chatterbox</title>
+  <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- dependencies -->
-    <script src="bower_components/jquery/jquery.min.js"></script>
-    <!-- your scripts -->
-    <script src="env/config.js"></script>
-    <script src="scripts/app.js"></script>
-  </head>
-  <body>
-    <div id="main">
-      <h1>chatterbox</h1>
-      <!-- Your HTML goes here! -->
+  <!-- dependencies -->
+  <script src="bower_components/jquery/jquery.min.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <!-- your scripts -->
+  <script src="env/config.js"></script>
+  <script src="scripts/app.js"></script>
+</head>
+<body>
+
+  <div id="main">
+
+    <h1>chatterbox</h1>
+
+
+    <div class="lobby">
+      <!--Rooms Drop Down-->
+      <label for="roomSelect">Rooms </label>
+      <select id="roomSelect" name="room"><option value="choose">Home Base</option>
+      </select>
+
+      <!--Add a New Chatroom input field
+        <form id="newRoom"> 
+        <label for="newRoom"> Add a new Chat Room </label>
+        <input type="text" id="chatRoomName" placeholder="Chatroom Name"/>
+        <input type="submit" value="submit"/>
+      </form>-->
+
     </div>
-  </body>
+
+    <!--Add a new message Form-->
+    <div class= "newMessageForm">
+      <form id="newMessage"> 
+        <div>
+         <label for="username">Username</label>
+         <input type="text" id="username" name="username" style="width:300px"/>
+       </div>
+       <div>
+
+       <label for="message">Message</label>
+        <input type="text" id="message" name="message" style="width:300px" />
+      </div>
+      <div>
+        <label for="room">Room</label>
+        <input type="text" id="room" name="room" style="width:300px"/>
+      </div>
+
+      <input type="submit" value="submit"/>
+     
+    </form>
+  </div>
+
+  <!--Where the new Chats are appended to-->
+  <div id="chats">
+  </div>
+
+  <div class="friends"> </div>
+</div>
+
+
+</body>
 </html>

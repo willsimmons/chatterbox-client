@@ -5,6 +5,8 @@ body {
     font-family: arial, sans-serif;
 }
 
+
+
 #main {
     width: 500px;
     margin: auto;
@@ -20,6 +22,7 @@ body {
     font-size: 35px;
     margin-bottom: 5px;
     padding: 5px;
+    text-align:center;
 }
 
 #main h1 span {
@@ -81,4 +84,38 @@ form input[type=text] {
 
 .spinner img {
     padding: 10px;
+}
+
+.lobby{
+    width: 30%;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.newMessageForm{
+    width: 100%;
+    margin: 0 auto;
+    text-align: right;
+}
+
+
+
+#main #chats{
+    border: solid;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#main .friends {
+    border: solid blue;
+    width: 90%;
+    height: auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.new{
+    margin-left: 40%;
 }
