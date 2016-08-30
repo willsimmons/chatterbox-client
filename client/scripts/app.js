@@ -1,7 +1,7 @@
 $(document).ready(function() {
   
   //app initialization
-  app.init();
+  
   
   //event handlers
   $("#newMessage").on("submit", function(event){
@@ -13,13 +13,10 @@ $(document).ready(function() {
     app.send(message);
   });
 
-  //nonworking click on friends event handler
-  // $("#friend").click(function(){
-  //   console.log("clicked");
-  //   console.log(target);
-  //   //would call add friend on this
-  // });
+  
 
+$('#chats').on('click', '.friend', function(){ 
+  console.log(this);
 });
 
 var app={
@@ -84,3 +81,5 @@ var app={
   handleSubmit: function(){}
 
 };
+app.init();
+});
