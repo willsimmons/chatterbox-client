@@ -1,5 +1,2 @@
-
-1. populate dropdown of friends to list clicked friends, or
-make somthing similar to chats, but for clicked friends
-2. when selecting a drop down box, allow it to only select chats with the selected options
-3. populate room drop down box based on chats pulled from server, make sure it can add a new room based on what the user's input message is
+1. To Refresh after Messages are sent
+2. Activate Drop Down Filters
