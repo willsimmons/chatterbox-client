@@ -58,9 +58,11 @@ var app={
     $.each(message.results, function(i, object){
       $.each(object, function(username, text, roomName){
         var cleanString= object.text;
-         if(cleanString.match(/^[0-9a-zA-Z]{1,16}$/)){
-           appendThis="<div>"+ "<strong>" +object.username+ "</strong>"  + ": " + cleanString+ "   " + object.createdAt+"</div>"    
-         }
+        if( cleanString !== undefined){
+          if(cleanString.match(/^[0-9a-zA-Z]{1,16}$/)){
+            appendThis="<div>"+ "<strong>" +object.username+ "</strong>"  + ": " + cleanString+ "   " + object.createdAt+"</div>"    
+          }
+        }
       });
       $("#chats").append(appendThis);
     });
@@ -71,7 +73,7 @@ var app={
   addFriend: function(userName) {
     $(".friends").append("<div>" + userName + "</div>")
   },
- 
- handleSubmit: function(){}
+  
+  handleSubmit: function(){}
 
 };
