@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  
   //app initialization
   app.init();
   
@@ -12,10 +12,18 @@ $(document).ready(function() {
     message.text=$("#message").val();
     app.send(message);
   });
+
+  //nonworking click on friends event handler
+  // $("#friend").click(function(){
+  //   console.log("clicked");
+  //   console.log(target);
+  //   //would call add friend on this
+  // });
+
 });
 
 var app={
-
+  
   fetch: function(){
     $.ajax({
       url: "https://api.parse.com/1/classes/chatterbox",
@@ -61,7 +69,7 @@ var app={
         if(cleanString !== undefined){
           cleanString.replace(/^[0-9a-zA-Z]{1,16}$/);
         }
-        cleanString ="<div>"+ "<strong>" +object.username+ "</strong>"  + ": " + cleanString+ "   " + object.createdAt+"</div>"    
+        cleanString = '<div class="friend"><strong>'+object.username+ "</strong>"  + ": " + cleanString+ "   " + object.createdAt+"</div>"    
       });
       $("#chats").append(cleanString);
     });
