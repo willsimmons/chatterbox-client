@@ -41,6 +41,10 @@ $(document).ready(function() {
         // changes just use data.results;
         var JSONObject= data;
         app.addMessage(JSONObject,friends,rooms);
+        app.cleanRooms(friends,rooms);
+        app.addRoom(rooms);
+        app.addFriend(friends);
+
       },
       error: function(data, textStatus, error) {
         console.log('error: ', data, 'data', textStatus, 'error', error);
@@ -57,8 +61,7 @@ $(document).ready(function() {
         success: function (data) {
           console.log('chatterbox: Message sent'); 
           //maybe put this on top of messages - worst case
-        //automatically refresh when new message is added
-        app.fetch();
+          //automatically refresh when new message is added
       },
       error: function (data) {
         console.error('chatterbox: Failed to send message');
@@ -92,16 +95,21 @@ $(document).ready(function() {
     friends = _(friends).unique();  // _.unique(friends);
     rooms =_(rooms).unique();
     //put all the rooms in the drop down menu
-    // app.addRoom(rooms);
     // app.addFriend(friends);
   },
   //change drop down menus
-  addRoom: function(roomName) {
-   
+  addRoom: function(roomList) {
+    roomList =_(roomList).unique();
+    for (var i = 0; i < roomList.length; i++) {
+      $('#roomSelect').append("<option>"+ roomList[i]+"</option>");
+    }
   },
   
-  addFriend: function(friends) {
-   
+  addFriend: function(friendList) {
+    friendList =_(friendList).unique();
+    for (var i = 0; i < friendList.length; i++) {
+      $('#friendSelect').append("<option>"+ friendList[i]+"</option>");
+    }
   },
 
   handleSubmit: function(){}
