@@ -5,8 +5,6 @@ body {
     font-family: arial, sans-serif;
 }
 
-
-
 #main {
     width: 500px;
     margin: auto;
@@ -97,8 +95,6 @@ form input[type=text] {
     margin: 0 auto;
     text-align: right;
 }
-
-
 
 #main #chats{
     border: solid;
