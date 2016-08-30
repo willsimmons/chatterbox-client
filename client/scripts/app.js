@@ -3,7 +3,7 @@ $(document).ready(function() {
   //app initialization
   app.init();
   
-  //app event handlers this should be refactored and put into init
+  //event handlers
   $("#newMessage").on("submit", function(event){
     event.preventDefault();
     var message={};
