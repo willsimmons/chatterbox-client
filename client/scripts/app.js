@@ -3,7 +3,6 @@ $(document).ready(function() {
   var rooms = [];
   //app initialization
   
-  
   //event handlers
   $("#newMessage").on("submit", function(event){
     event.preventDefault();
@@ -12,6 +11,7 @@ $(document).ready(function() {
     message.room=$("#room").val();
     message.text=$("#message").val();
     app.send(message);
+    // figure out how to put the new message up top
   });
 
   $("#clear").click(function(event){
@@ -56,6 +56,7 @@ $(document).ready(function() {
         dataType: "JSON",
         success: function (data) {
           console.log('chatterbox: Message sent'); 
+          //maybe put this on top of messages - worst case
         //automatically refresh when new message is added
         app.fetch();
       },
@@ -73,7 +74,6 @@ $(document).ready(function() {
       var cleanString;
       $.each(message.results, function(index, object){
         $.each(object, function(){
-          console.log(object);
           cleanString = object.text;
           if(cleanString !== undefined){
             cleanString.replace(/^[0-9a-zA-Z]{1,16}$/);
@@ -89,19 +89,19 @@ $(document).ready(function() {
 
   //get only one copy of each room and each friend in the messages div
   cleanRooms: function (friends,rooms){
-    friends = _(friends).unique();
+    friends = _(friends).unique();  // _.unique(friends);
     rooms =_(rooms).unique();
     //put all the rooms in the drop down menu
-    console.log(rooms);
-    console.log(friends);
+    // app.addRoom(rooms);
+    // app.addFriend(friends);
   },
-
+  //change drop down menus
   addRoom: function(roomName) {
-
+   
   },
   
-  addFriend: function(userName) {
-    $(".friends").append("<div>" + userName + "</div>")
+  addFriend: function(friends) {
+   
   },
 
   handleSubmit: function(){}
